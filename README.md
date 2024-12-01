@@ -3,7 +3,8 @@
 TypeScript で作動する日本語組版処理システムのプロトタイプです。
 
 - TypeScript でプログラマブルに動く日本語組版処理システムの提案  
-https://zenn.dev/inaniwaudon/articles/5d040f543c4c69
+Web: https://zenn.dev/inaniwaudon/articles/5d040f543c4c69  
+PDF: https://github.com/inaniwaudon/minitype-test/blob/main/test/article.pdf
 
 ## サンプルプログラムの実行方法
 

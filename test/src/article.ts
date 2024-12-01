@@ -86,7 +86,7 @@ const blockStyles: BlockStyleList = {
   ],
   list: {
     item: () => "・",
-    firstIndent: 0,
+    firstIndent: -3,
   },
   code: {
     align: "left",
