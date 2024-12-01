@@ -1,0 +1,10 @@
+node_modules
+yarn-error.log
+
+*.db
+.test*.ts
+*.otf
+
+.vscode
+dist
+font-caches.db

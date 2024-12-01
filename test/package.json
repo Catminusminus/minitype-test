@@ -1,0 +1,17 @@
+{
+  "name": "minitype-test",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node src/test.ts",
+    "lint": "biome lint ./src",
+    "format": "biome format ./src --write"
+  },
+  "dependencies": {
+    "minitype": "../package"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.5.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
