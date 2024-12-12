@@ -77,6 +77,9 @@ export const unifyInlineStyle = (
   inlines: Inline[],
   commandStyles: CommandStyleRecord,
 ) => {
+  if (!inlines) {
+    return
+  }
   for (const inline of inlines) {
     if (isCommand(inline)) {
       if (inline.name && inline.name in commandStyles) {
@@ -95,7 +98,6 @@ export const getCommandRanges = (inlines: InlineWithId[]) => {
 
   const process = (inlines: InlineWithId[]): Record<string, CommandRange> => {
     let newCommandIdToIndex: Record<string, CommandRange> = {};
-
     for (const inline of inlines) {
       // 文字列
       if (!isCommand(inline)) {

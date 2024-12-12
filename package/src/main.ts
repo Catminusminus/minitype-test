@@ -31,6 +31,7 @@ export const minitype = async (
   pdfPath: string,
   options?: MiniTypeOptions,
 ) => {
+  console.log("body: ", JSON.stringify(body, null, 2))
   console.log("minitype\n");
   const db = new sqlite.Database("./font-caches.db");
 
@@ -61,6 +62,7 @@ export const minitype = async (
       id: {},
     },
   };
+  console.log(body);
   // 柱とノンブルは後ほど処理する
   const filteredBody = body.filter(
     (block) => block.type !== "pillar" && block.type !== "nombre",

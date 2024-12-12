@@ -93,6 +93,7 @@ export const applyTransformer = (
   labelMap: LabelMap,
   blockOperations?: BlockOperation[],
 ) => {
+  console.log(blocks);
   // ルートの場合のみ初期化
   const currentOperations: BlockOperation[] =
     blockOperations ?? createBlockOperations(blocks);
@@ -145,6 +146,10 @@ const applyCommandTransformer = (
 ) => {
   for (const transformer of transformers) {
     transformer(command, env);
+  }
+  console.log(command)
+  if (!command.body) {
+    return;
   }
   // コマンドの内容に対して再帰的に適用
   for (const body of command.body) {

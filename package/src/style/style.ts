@@ -441,6 +441,10 @@ export const collectFontSrcs = (
   };
 
   const loadInlines = (inlines: Inline[]) => {
+    console.log("inlines", inlines);
+    if (!inlines) {
+      return;
+    }
     for (const inline of inlines) {
       if (isCommand(inline)) {
         if (inline.style?.font) {

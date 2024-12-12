@@ -5,11 +5,14 @@
   "author": "Yuto Wada",
   "main": "./dist/index.esm.js",
   "module": "./dist/index.esm.js",
+  "imports": {
+    "#minitype-jsx/jsx-runtime": "./dist/jsx/jsx-runtime.js"
+  },
   "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register src/test.ts",
-    "build": "ts-node build.ts && tsc --emitDeclarationOnly && tsc-alias",
+    "build": "tsc && node --loader ts-node/esm  build.ts && tsc --emitDeclarationOnly && tsc-alias",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest --silent",
     "test-console": "node --experimental-vm-modules node_modules/jest/bin/jest",
     "lint": "biome lint ./src",
@@ -50,5 +53,9 @@
     "tsc-alias": "^1.8.8",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.3.3"
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
   }
 }

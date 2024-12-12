@@ -109,6 +109,9 @@ export const resolveBlockLabels = (blocks: Block[], labelMap: LabelMap) => {
  */
 export const assignCommandIds = (blocks: BaseBlock[]) => {
   const loopLabels = (inlines: Inline[]) => {
+    if (!inlines) {
+      return
+    }
     for (const inline of inlines) {
       if (isCommand(inline)) {
         inline.id = uuidV4();
